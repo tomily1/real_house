@@ -2,18 +2,49 @@
   .modal-dialog
     .modal-content
       .modal-header
-        h3 Add a new asset listing
+        h3 Create new listing
         button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
       .modal-body
         = form_tag(assets_path, :method => 'post', :class => 'form', :id => 'create-asset') do
           .form-group
-            = label_tag(:name)
-            = text_field_tag(:name, '', :placeholder => "Name", :class => 'form-control', :required => true)
-          .form-group
-            = label_tag(:description)
-            = text_area_tag(:description, '', :placeholder => "Description", :class => 'form-control', :required => true)
-          .form-group
             = label_tag(:type)
-            = select_tag(:kind, options_for_select(assets_types.values, assets_types.values.first), :class => 'form-control', :required => true)
+            = select_tag(:type, options_for_select(assets_types, assets_types.first), :class => 'form-control', :required => true)
+          .form-group.asset
+            = label_tag(:owner)
+            = text_field_tag(:owner, '', :placeholder => "Owner", :class => 'form-control', :required => true)
+          .form-group.asset
+            = label_tag(:address)
+            = text_area_tag(:address, '', :placeholder => "Address", :class => 'form-control', :required => true)
+          .form-group.asset
+            = label_tag(:email)
+            = text_field_tag(:email, '', :placeholder => "Email", :class => 'form-control', :required => true)
+          .form-group.asset
+            = label_tag(:rooms)
+            = number_field_tag(:rooms, '', :placeholder => "No. of rooms", :class => 'form-control', :required => true)
+          .form-group.asset
+            = label_tag(:units)
+            = number_field_tag(:units, '', :placeholder => "No. of units", :class => 'form-control', :required => true)
+          .form-group.asset
+            = label_tag(:sqmt)
+            = number_field_tag(:sqmt, '', :placeholder => "Square meter", :class => 'form-control', :required => true)
+          .form-group.asset
+            = label_tag(:floors)
+            = number_field_tag(:floors, '', :placeholder => "No. of floors", :class => 'form-control', :required => true)
+          .form-group.asset
+            = label_tag(:shops)
+            = number_field_tag(:shops, '', :placeholder => "No. of shops", :class => 'form-control', :required => true)
+          .form-group.asset
+            = label_tag(:parking)
+            = number_field_tag(:parking, '', :placeholder => "Parking", :class => 'form-control', :required => true)
+          .form-group.asset
+            = label_tag(:air_condition)
+            = check_box_tag(:air_cond, 'accepted', false)
+          .form-group.asset
+            = label_tag(:price)
+            = number_field_tag(:price, '', :placeholder => "Price", :class => 'form-control', :required => true, :step => ".01")
+          .form-group.asset
+            = label_tag(:image)
+            br
+            = file_field_tag(:image, :multiple => true)
           .form-group
             = submit_tag('Create Listing', class: 'btn assets-red-button')

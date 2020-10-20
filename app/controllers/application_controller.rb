@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
 
   def assets_types
     {
-      'house' => 'House',
-      'commercial_unit' => 'Commercial Unit',
-      'complex_building' => 'Complex Building'
+      'House' => 'house',
+      'Commercial Unit' => 'commercial_unit',
+      'Complex Building' => 'complex_building'
     }
   end
 end
