@@ -19,6 +19,9 @@ Simple Rails app* that allow managers (permissions are not important) to add ite
   2. Rubocop
 
 ### Setting up
-1. run the app with `rails server`
-2. run `./bin/webpack-dev-server` on a separate terminal
-3. the app will be available on `localhost:3000`
+1. clone this respository git clone git@github.com:tomily1/real_house.git
+2. `cd real_house`
+3. run `bundle install`
+4. run the app with `rails server`
+5. run `./bin/webpack-dev-server` on a separate terminal to compile assets
+6. the app will be available on `localhost:3000`
