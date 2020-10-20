@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 class PropertiesController < ApplicationController
-  before_action :asset, only: [:new]
+  before_action :asset, only: %i[new create]
 
   def index
     @assets = Asset.all
   end
 
   def show
-    @asset = Asset.find(params[:id])
+    @asset = Asset.find_by_id(params[:id])
     redirect_to root_path if @asset.nil?
   end
 
@@ -26,7 +26,7 @@ class PropertiesController < ApplicationController
 
   def purchase
     email = purchase_params[:email]
-    VeryLongJob.perform_now(email, params[:property_id])
+    VeryLongJob.perform_later(email, params[:property_id])
     redirect_to root_path
   end
 
@@ -41,6 +41,6 @@ class PropertiesController < ApplicationController
   end
 
   def cast(bool)
-    ActiveModel::Type::Boolean.new.cast(bool)
+    ActiveModel::Type::Boolean.new.cast(bool || false)
   end
 end

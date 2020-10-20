@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class HousesController < AssetsController
+class HousesController < PropertiesController
   def klass
     House
   end
@@ -17,6 +17,6 @@ class HousesController < AssetsController
       :air_cond,
       :price,
       images: []
-    ).merge!('air_cond' => cast(params[:air_cond]))
+    ).merge!('air_cond' => cast(params.require(:house).permit(:air_cond)))
   end
 end

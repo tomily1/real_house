@@ -5,7 +5,7 @@
     br
     = simple_form_for(@asset, url: houses_path, :method => 'post', :class => 'form', :id => 'create-asset') do |f|
       .form-group
-        = f.input(:owner, class: 'form_control', placeholder: 'Owner', required: true)
+        = f.input(:owner, as: :email, class: 'form_control', placeholder: 'Owner', required: true)
       .form-group
         = f.input(:address, as: 'text', placeholder: "Address", required: true)
       .form-group

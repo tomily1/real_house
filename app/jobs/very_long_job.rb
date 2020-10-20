@@ -5,7 +5,8 @@ class VeryLongJob < ApplicationJob
   def perform(email, property_id)
     sleep 60
     true # the task was completed correctly
-    asset = Asset.find(property_id)
+    asset = Asset.find_by_id(property_id)
+    return if asset.nil?
 
     mailer = PurchaseMailer.with(asset: asset, email: email)
     mailer.order_email.deliver_later
