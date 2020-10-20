@@ -6,6 +6,13 @@ rvm:
   - 2.6.0
 matrix:
   fast_finish: true
+addons:
+  postgresql: '9.5'
+services:
+  - postgresql
+before_script:
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
 script:
   - bundle exec rubocop -c .rubocop.yml --fail-level C
   - bundle exec rspec
