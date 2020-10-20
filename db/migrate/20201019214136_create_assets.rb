@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateAssets < ActiveRecord::Migration[6.0]
+class CreateAssets < ActiveRecord::Migration[5.2]
   def change
     create_table :assets do |t|
       t.string :owner
@@ -21,7 +21,7 @@ class CreateAssets < ActiveRecord::Migration[6.0]
 
       t.boolean :air_cond
 
-      t.decimal :price, precision: 10, scale: 2
+      t.money :price
 
       t.timestamps
     end
