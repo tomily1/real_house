@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
 class ComplexBuildingsController < AssetsController
-  def type
+  def klass
     ComplexBuilding
   end
 
   private
 
   def asset_params
-    params.permit(
+    params.require(:complex_building).permit(
       :owner,
       :address,
       :units,
       :sqmt,
       :price,
-      image: []
+      images: []
     )
   end
 end

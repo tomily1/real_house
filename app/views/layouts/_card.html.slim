@@ -1,0 +1,21 @@
+.col-lg-6.col-md-6
+  .card.mr-4.mb-4
+    .row.no-gutters
+      .col-sm-5
+        .carousel.slide(data-ride="carousel" data-interval="false" id="carouselControls-#{asset.id}")
+          .carousel-inner
+            - asset.images.each_with_index do |image, index|
+              div class="carousel-item #{(index == 0) ? 'active' : ''}"
+                = image_tag(url_for(image), class: "d-block w-100", alt: image.name)
+          - if asset.images.count > 1
+            a.carousel-control-prev data-slide="prev" href="#carouselControls-#{asset.id}" role="button" 
+              span.carousel-control-prev-icon aria-hidden="true" 
+              span.sr-only Previous
+            a.carousel-control-next data-slide="next" href="#carouselControls-#{asset.id}" role="button" 
+              span.carousel-control-next-icon aria-hidden="true" 
+              span.sr-only Next
+      .col-sm-7
+        .card-body
+          h5.mt-3.owner = asset.owner
+          h4.mt-3.owner = number_to_currency(asset.price)
+          p.card-text.small = asset.address

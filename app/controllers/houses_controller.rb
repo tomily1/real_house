@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class HousesController < AssetsController
-  def type
+  def klass
     House
   end
 
