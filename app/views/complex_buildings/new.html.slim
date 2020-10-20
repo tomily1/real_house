@@ -1,0 +1,33 @@
+.row
+  .col-3
+  .col-6
+    h3 New Complex Building listing
+    br
+    = form_tag(commercial_units_path, :method => 'post', :class => 'form', :id => 'create-asset') do
+      .form-group.asset
+        = label_tag(:owner)
+        = text_field_tag(:owner, '', :placeholder => "Owner", :class => 'form-control', :required => true)
+      .form-group.asset
+        = label_tag(:address)
+        = text_area_tag(:address, '', :placeholder => "Address", :class => 'form-control', :required => true)
+      .form-group.asset
+        = label_tag(:email)
+        = text_field_tag(:email, '', :placeholder => "Email", :class => 'form-control', :required => true)
+      .form-group.asset
+        = label_tag(:shops)
+        = number_field_tag(:shops, '', :placeholder => "No. of shops", :class => 'form-control', :required => true)
+      .form-group.asset
+        = label_tag(:sqmt)
+        = number_field_tag(:sqmt, '', :placeholder => "Square meter", :class => 'form-control', :required => true)
+      .form-group.asset
+        = label_tag(:parking)
+        = number_field_tag(:parking, '', :placeholder => "Parking", :class => 'form-control', :required => true)
+      .form-group.asset
+        = label_tag(:price)
+        = number_field_tag(:price, '', :placeholder => "Price", :class => 'form-control', :required => true, :step => ".01")
+      .form-group.asset
+        = label_tag(:image)
+        br
+        = file_field_tag(:image, :multiple => true)
+      .form-group
+        = submit_tag('Create Listing', class: 'btn assets-red-button')

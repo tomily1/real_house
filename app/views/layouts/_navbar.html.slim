@@ -5,5 +5,6 @@ nav.navbar.justify-content-between.background-blue
       |  Real<span class="background-logo-color">House</span>
     .my-2.my-sm-0
       span.text-white.mr-4 Welcome!!
-      = link_to("Create an Asset", "#create-assets-modal", class: "text-white mr-4", "data-toggle" => "modal")
-      = render partial: "assets/new"
+      = link_to("New House Listing", new_house_path, class: "text-white mr-4")
+      = link_to("New Commercial Unit Listing", new_commercial_unit_path, class: "text-white mr-4")
+      = link_to("New Complex Building Listing", new_complex_building_path, class: "text-white mr-4")
