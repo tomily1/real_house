@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
   before_action :asset, only: %i[new create]
 
   def index
-    @assets = Asset.all
+    @assets = Asset.order(created_at: :desc)
   end
 
   def show
