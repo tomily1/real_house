@@ -11,9 +11,6 @@
         = label_tag(:address)
         = text_area_tag(:address, '', :placeholder => "Address", :class => 'form-control', :required => true)
       .form-group.asset
-        = label_tag(:email)
-        = text_field_tag(:email, '', :placeholder => "Email", :class => 'form-control', :required => true)
-      .form-group.asset
         = label_tag(:shops)
         = number_field_tag(:shops, '', :placeholder => "No. of shops", :class => 'form-control', :required => true)
       .form-group.asset
@@ -28,6 +25,6 @@
       .form-group.asset
         = label_tag(:image)
         br
-        = file_field_tag(:image, :multiple => true)
+        = file_field_tag(:image)
       .form-group
         = submit_tag('Create Listing', class: 'btn assets-red-button')
