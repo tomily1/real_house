@@ -1,0 +1,4 @@
+/! Search form
+= form_tag(root_path, :method => 'get', :class => 'form-inline mb-4', :id => 'assets-search') do
+  = text_field_tag(:term, "", placeholder: (params[:term].presence || 'Search for Assets'), class: 'form-control assets-search-box', autocomplete: 'off')
+  = submit_tag("Search", class: 'btn assets-red-button')
