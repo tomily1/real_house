@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CommercialUnitsController < AssetsController
+class CommercialUnitsController < PropertiesController
   def klass
     CommercialUnit
   end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ComplexBuildingsController < AssetsController
+class ComplexBuildingsController < PropertiesController
   def klass
     ComplexBuilding
   end

@@ -3,7 +3,7 @@
   .col-6
     h3 New House listing
     br
-    = simple_form_for(:house, url: houses_path, :method => 'post', :class => 'form', :id => 'create-asset') do |f|
+    = simple_form_for(@asset, url: houses_path, :method => 'post', :class => 'form', :id => 'create-asset') do |f|
       .form-group
         = f.input(:owner, class: 'form_control', placeholder: 'Owner', required: true)
       .form-group

@@ -1,0 +1,3 @@
+.row.justify-content-center
+  - @assets.each do |asset|
+    = render partial: 'layouts/card', locals: { asset: asset, link: true }

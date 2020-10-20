@@ -19,3 +19,8 @@
           h5.mt-3.owner = asset.owner
           h4.mt-3.owner = number_to_currency(asset.price)
           p.card-text.small = asset.address
+
+          - if link
+            .row
+              .bottom-right.mb-2.mr-3
+                = link_to 'purchase >>', property_path(asset.id)

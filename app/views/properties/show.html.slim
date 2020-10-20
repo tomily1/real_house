@@ -1,0 +1,8 @@
+= render partial: 'layouts/card', locals: { asset: @asset, link: false }
+.row
+.col-lg-6.col-md-6
+  = simple_form_for(:purchase, url: property_purchase_path(@asset.id), :method => 'post', :class => 'form', :id => 'create-asset') do |f|
+    .form-group
+      = f.input(:email, class: 'form_control', placeholder: 'user@domain.com', required: true)
+    .form-group
+      = f.submit('Purchase', class: 'btn assets-red-button')

@@ -1,7 +1,0 @@
-.row
-  .col-3
-  .col-6
-    = render partial: "layouts/search_box"
-.row.justify-content-center
-  - @assets.each do |asset|
-    = render partial: 'layouts/card', locals: { asset: asset }
