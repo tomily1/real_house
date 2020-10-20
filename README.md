@@ -1,5 +1,5 @@
 # Real House App
-[![Build Status](https://travis-ci.com/tomily1/real_house.svg?branch=master)](https://travis-ci.com/tomily1/real_house)
+[![Build Status](https://travis-ci.com/tomily1/real_house.svg?token=pEvX4L5vELYgZNrdwxyT&branch=master)](https://travis-ci.com/tomily1/real_house)
 
 Simple Rails app* that allow managers (permissions are not important) to add items to the list of assets and allow users purchase them
 

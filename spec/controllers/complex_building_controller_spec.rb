@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe ComplexBuildingsController do
   it 'creates complex building' do
     post :create, params: {
-      complex_building: { 
+      complex_building: {
         owner: 'test@test.co',
         address: 'test',
         units: 1,
